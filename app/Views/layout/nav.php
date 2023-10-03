@@ -24,17 +24,19 @@
             </span>
             <div class="pt-3 me-5">
                 <p class="fs-4" id="nilaiXP"></p>
-                <!-- <script>
-                    if (point > 0) {
-                        xp += point;
-                        xp = document.getElementById('nilaiXP');
-                        xp.textContent = "" + xp;
-                    }
-                </script> -->
+                <script>
+                    // if (point = 0) {
+                    //     xp = document.getElementById('nilaiXP');
+                    //     xp.textContent = "0";
+                    // } else {
+                    //     xp += point;
+                    //     xp = document.getElementById('nilaiXP');
+                    //     xp.textContent = "" + xp;
+                    // }
+                </script>
             </div>
-            <span class="me-3">
+            <!-- <span class="me-3">
                 <a href="/profile"><img src="assets/icon/person.png" style="height: 2.5em;" alt="">
-            </span>
+            </span> -->
         </div>
-    </div>
 </nav>

@@ -2,23 +2,7 @@ var transcript;
 var confidence;
 var point = 0;
 var totalPoint = 0;
-// var xp = 0;
-  var xp = document.getElementById("nilaiXP");
-  xp.innerHTML = "0";
-  // console.log(xp);
-
-// // function nilaiXp() {
-//   // xp.textContent = "xpmu";
-//   if (point = 0) {
-//     xp = document.getElementById('xp');
-//     xp.textContent = "0";
-// } else {
-//     xp += point;
-//     xp = document.getElementById('xp');
-//     xp.textContent = "" + xp;
-// }
-
-// }
+var xp = 0;
 
 function runSpeechRecognition() {
   // get output div reference
@@ -155,4 +139,33 @@ function cekJawaban() {
         modalTotalSound.play();
       });
   }
+}
+
+function hasilxp() {
+  xp += point;
+  // window.location.href = "localhost:8080/Views/layout/nav?xp=" + xp;
+  $.ajax({
+    type: 'POST', // Anda juga dapat menggunakan 'GET' sesuai kebutuhan
+    url: 'http://localhost:8080/Controllers/Auth/submitData', // Gantilah 'proses.php' dengan URL endpoint PHP yang sesuai
+    Headers: {
+      'Content-Type' : 'application/json',
+      'Access-Control-Allow-Origin' : '*',
+      'Access-Control-Allow-Methods' : 'DELETE, POST, GET, OPTIONS',
+      'Authorization' : 'Basic NUdlUzlacWZQYWdvZ09FWHZNMXRoam1rSDNEMDY5aE06N3poRXUyYVNUd1V4akwwZQ==',
+      'Access-Control-Allow-Headers' : 'Content-Type, Authorization, X-Requested-With'
+    },
+    data: xp,
+    contentType: false,
+    processData: false,
+    success: function(data) {
+        console.log('Data berhasil dikirim dan diproses oleh PHP.');
+        // Anda dapat melakukan apa pun dengan respons dari PHP di sini
+        console.log(data);
+    },
+    error: function(xhr, status, error) {
+        console.error('Terjadi kesalahan: ' + error);
+    }
+  });
+  totalPoint = document.getElementById('nilaiXP');
+  totalPoint.textContent = "" + xp;
 }
