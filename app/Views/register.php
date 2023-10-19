@@ -45,6 +45,7 @@
                                 <label for="password" class="col-form-label">Password</label>
                                 <input type="password" name="password" class="form-control" required>
                             </div>
+
                             <button class="btn btn_template2 my-1 text-white btn_pink rounded-pill text-center fw-bold">Register</button>
                             <!-- <a href="/dashboard" class="btn btn_template2 my-1 text-white btn_pink rounded-pill" role="button">Register</a> -->
                             <!-- <a href="" class="btn btn_template2 my-1 text-white btn_pink rounded-pill" role="button">Register</a> -->

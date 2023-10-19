@@ -16,23 +16,10 @@
                             2</a>
                         <a href="" class="btn btn-rounded my-3 mx-2 text-white btn_red fs-5 fw-bold" role="button">
                             3</a>
-                        <a href="/hewan-4" class="btn btn-rounded my-3 mx-2 text-white btn_gray fs-5 fw-bold" role="button">
+                        <a href="/hewan-4" class="btn btn-rounded my-3 mx-2 text-white btn_gray fs-5 fw-bold disabled" role="button">
                             4</a>
-                        <a href="/hewan-5" class="btn btn-rounded my-3 mx-2 text-white btn_gray fs-5 fw-bold" role="button">
+                        <a href="/hewan-5" class="btn btn-rounded my-3 mx-2 text-white btn_gray fs-5 fw-bold disabled" role="button">
                             5</a>
-                    </div>
-                    <div class="card-footer">
-                        <h5 class="yellow_color fw-bold text-center">Informasi</h5>
-                        <div class="mt-2">
-                            <small><b class="yellow_color">Herbivora: </b> <span>Hewan yang makanan utamanya terdiri dari tumbuhan</span></small>
-                        </div>
-                        <div class="mt-2">
-                            <small><b class="yellow_color">Karnivora: </b><span>Hewan yang makanan utamanya terdiri dari daging</span></small>
-                        </div>
-                        <div class="mt-2">
-                            <small><b class="yellow_color">Omnivora: </b><span>Hewan yang makanan mencakup baik tumbuhan maupun daging</span></small>
-                        </div>
-
                     </div>
                 </div>
             </div>
@@ -51,7 +38,7 @@
                                     var data = [];
                                 </script>
                                 <?php
-                                for ($i = 10; $i < count($data); $i++) {
+                                for ($i = 20; $i < count($data); $i++) {
                                     $jenis = $data[$i]['jenis'];
                                     $nama = $data[$i]['nama'];
                                     $gambar = "assets/img/data/hewan/" . $data[$i]['gambar'];

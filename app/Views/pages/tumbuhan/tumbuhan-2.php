@@ -14,11 +14,11 @@
                             1</a>
                         <a href="" class="btn btn-rounded my-3 mx-2 text-white btn_red fs-5 fw-bold" role="button">
                             2</a>
-                        <a href="/tumbuhan-3" class="btn btn-rounded my-3 mx-2 text-white btn_gray fs-5 fw-bold" role="button">
+                        <a href="/tumbuhan-3" class="btn btn-rounded my-3 mx-2 text-white btn_gray fs-5 fw-bold disabled" role="button">
                             3</a>
-                        <a href="/tumbuhan-4" class="btn btn-rounded my-3 mx-2 text-white btn_gray fs-5 fw-bold" role="button">
+                        <a href="/tumbuhan-4" class="btn btn-rounded my-3 mx-2 text-white btn_gray fs-5 fw-bold disabled" role="button">
                             4</a>
-                        <a href="/tumbuhan-5" class="btn btn-rounded my-3 mx-2 text-white btn_gray fs-5 fw-bold" role="button">
+                        <a href="/tumbuhan-5" class="btn btn-rounded my-3 mx-2 text-white btn_gray fs-5 fw-bold disabled" role="button">
                             5</a>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                                     var data = [];
                                 </script>
                                 <?php
-                                for ($i = 5; $i < count($data); $i++) {
+                                for ($i = 10; $i < count($data); $i++) {
                                     $nama = $data[$i]['nama'];
                                     $gambar = "assets/img/data/tumbuhan/" . $data[$i]['gambar'];
                                 ?>

@@ -7,11 +7,23 @@ use CodeIgniter\Model;
 class UserModel extends Model
 {
     protected $table = 'users';
-    protected $allowedFields = ['name', 'email', 'password'];
+    protected $allowedFields = ['id', 'name', 'email', 'password', 'profil_pict', 'xp'];
 
     public function getUsers()
     {
         return $this->findAll();
+    }
+
+    public function getDescendingDataUser()
+    {
+        // Mengambil data dengan urutan ascending berdasarkan kolom tertentu
+        return $this->orderBy('xp', 'desc')->findAll();
+    }
+
+    public function getUserById($id)
+    {
+        return $this->find($id);
+        // return $this->getWhere(['id' => $id]);
     }
 
     protected $validationRules = [

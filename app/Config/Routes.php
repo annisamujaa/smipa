@@ -44,8 +44,8 @@ $routes->group('/dashboard', function ($routes) {
     $routes->post('/', 'Dashboard::profile/');
 });
 // $routes->get('/dashboard', 'Dashboard::index/');
-$routes->get('/tantangan', 'Tantangan::index/');
-$routes->get('/profile', 'Profile::profile');
+$routes->get('/peringkat', 'Peringkat::index/');
+$routes->get('/profile', 'Auth::profil');
 $routes->get('/ubah_profile', 'Profile::edit_profile');
 $routes->get('/petunjuk', 'Petunjuk::index/');
 $routes->get('/cuaca', 'Cuaca::index/');
@@ -72,6 +72,8 @@ $routes->get('/tumbuhan-2', 'Tumbuhan::index2/');
 $routes->get('/tumbuhan-3', 'Tumbuhan::index3/');
 $routes->get('/tumbuhan-4', 'Tumbuhan::index4/');
 $routes->get('/tumbuhan-5', 'Tumbuhan::index5/');
+
+$routes->get('/Auth/submitData', 'Auth::submitData/');
 
 /*
  * --------------------------------------------------------------------

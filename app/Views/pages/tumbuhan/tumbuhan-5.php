@@ -38,7 +38,7 @@
                                     var data = [];
                                 </script>
                                 <?php
-                                for ($i = 20; $i < count($data); $i++) {
+                                for ($i = 40; $i < count($data); $i++) {
                                     $nama = $data[$i]['nama'];
                                     $gambar = "assets/img/data/tumbuhan/" . $data[$i]['gambar'];
                                 ?>

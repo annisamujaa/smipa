@@ -12,26 +12,14 @@
                     <div class="card-body py-1">
                         <a href="" class="btn btn-rounded my-3 mx-2 text-white btn_red fs-5 fw-bold" role="button">
                             1</a>
-                        <a href="/hewan-2" class="btn btn-rounded my-3 mx-2 text-white btn_gray fs-5 fw-bold" role="button">
+                        <a href="/hewan-2" id="soal2" class="btn btn-rounded my-3 mx-2 text-white btn_gray fs-5 fw-bold disabled" role="button">
                             2</a>
-                        <a href="/hewan-3" class="btn btn-rounded my-3 mx-2 text-white btn_gray fs-5 fw-bold" role="button">
+                        <a href="/hewan-3" id="soal3" class="btn btn-rounded my-3 mx-2 text-white btn_gray fs-5 fw-bold disabled" role="button">
                             3</a>
-                        <a href="/hewan-4" class="btn btn-rounded my-3 mx-2 text-white btn_gray fs-5 fw-bold" role="button">
+                        <a href="/hewan-4" id="soal4" class="btn btn-rounded my-3 mx-2 text-white btn_gray fs-5 fw-bold disabled" role="button">
                             4</a>
-                        <a href="/hewan-5" class="btn btn-rounded my-3 mx-2 text-white btn_gray fs-5 fw-bold" role="button">
+                        <a href="/hewan-5" id="soal5" class="btn btn-rounded my-3 mx-2 text-white btn_gray fs-5 fw-bold disabled" role="button">
                             5</a>
-                    </div>
-                    <div class="card-footer">
-                        <h5 class="yellow_color fw-bold text-center">Informasi</h5>
-                        <div class="mt-2">
-                            <small><b class="yellow_color">Herbivora: </b> <span>Hewan yang makanan utamanya terdiri dari tumbuhan</span></small>
-                        </div>
-                        <div class="mt-2">
-                            <small><b class="yellow_color">Karnivora: </b><span>Hewan yang makanan utamanya terdiri dari daging</span></small>
-                        </div>
-                        <div class="mt-2">
-                            <small><b class="yellow_color">Omnivora: </b><span>Hewan yang makanan mencakup baik tumbuhan maupun daging</span></small>
-                        </div>
 
                     </div>
                 </div>
@@ -107,7 +95,7 @@
                         </div> -->
 
                         <!-- modal jika jawaban benar -->
-                        <div class="modal fade px-5 py-3" tabindex="-1" role="dialog" id="output">
+                        <div class="modal fade px-5 py-3" tabindex="-1" role="dialog" id="outputbenar">
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                     <div class="modal-body">
@@ -121,16 +109,35 @@
                             </div>
                         </div>
 
+                        <!-- modal jika jawaban salah -->
+                        <div class="modal fade px-5 py-3" tabindex="-1" role="dialog" id="outputsalah">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <img src="assets/icon/wrong.png" alt="Benar" style="height: 75px;">
+                                        <h4 class="fw_bold mt-3">Jawabanmu Salah</h4>
+                                        <button class="btn btn_template2 text-white btn_blue text-center rounded-pill sticky-bottom my-2" role="button" onclick=" $('#outputsalah').modal('hide');">Coba Lagi</button>
+                                        <a href="/dashboard" class="btn btn_template2 text-white btn_red text-center rounded-pill sticky-bottom my-2" role="button">Halaman Utama</a>
+                                    </div>
+                                    <audio id="salahSound">
+                                        <source src="assets/sound/salah.mp3" type="audio/mpeg">\
+                                    </audio>
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- button selanjutnya -->
                         <button class="btn btn_template2 text-white btn_pink text-center rounded-pill sticky-bottom" role="button" id="next_btn">Selanjutnya</button>
                         <script>
                             var tombol = document.getElementById("next_btn");
                             tombol.onclick = function() {
+                                // if (data[i]['nama'] == transcript) { //tombol disable kalo jawaban blm bener
                                 i++;
                                 nextQuestionHewan();
                                 transcript = null;
                                 // data[i]['nama'] = data[i + 1]['nama'];/
                                 // runSpeechRecognition();
+                                // }
                             };
                         </script>
 
@@ -141,12 +148,15 @@
                                     <div class="modal-body pt-3">
                                         <img src="assets/icon/thumb.png" alt="Benar" style="height: 100px;">
                                         <h4 class="fw_bold mt-3">KAMU HEBAT! NILAI KAMU</h4>
-                                        <h4 class="yellow_color fw_bold mt-3" id="totalPoint"></h4>
+                                        <h4 class="yellow_color fw_bold mt-3" id="subPoint"></h4>
                                         <button class="btn btn_template2 text-white btn_pink text-center rounded-pill sticky-bottom" role="button" id="selesai">Selesai</button>
                                         <script>
                                             var selesai = document.getElementById("selesai");
                                             selesai.onclick = function() {
                                                 hasilxp();
+                                                removeDisabled();
+                                                // var urlTujuan = "<?php echo base_url('/dashboard'); ?>";
+                                                // window.location.href = urlTujuan;
                                             };
                                         </script>
                                         <audio id="modalTotalSound">
@@ -156,6 +166,7 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>

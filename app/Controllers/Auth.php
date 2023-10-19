@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\UserModel;
+use CodeIgniter\CLI\Console;
 
 class Auth extends BaseController
 {
@@ -16,10 +17,13 @@ class Auth extends BaseController
         $this->helpers = ['form', 'url'];
     }
 
+
     public function login()
     {
         // $this->session->setFlashdata('message', null);
         // $this->session->destroy();
+
+
         if ($this->isLoggedIn()) {
             return redirect()->to(base_url('/dashboard'));
         }
@@ -101,9 +105,33 @@ class Auth extends BaseController
             'logged_in' => TRUE
         ];
         session()->set($userData);
-
         return redirect()->to(base_url('dashboard'));
     }
+
+    public function profil()
+    {
+        $session = session();
+        $id = $session->get('id');
+        $name = $session->get('name');
+        $email = $session->get('email');
+        // $xp = $session->get('xp');
+
+        // Lakukan sesuatu dengan data user, misalnya tampilkan di view
+        return view('pages/menu_utama/profile', ['id' => $id, 'name' => $name, 'email' => $email]);
+        // view('layout/nav', ['id' => $id, 'name' => $name, 'email' => $email, 'xp' => $xp]);
+    }
+
+
+    // public function profil()
+    // {
+    //     $userId = session()->get('id');
+    //     $nama = session()->get('nama');
+    //     $data['id'] = $userId;
+    //     $data['nama'] = $nama;
+
+    //     return view('pages/menu_utama/profile', $data);
+    // }
+
 
     public function logout()
     {
@@ -114,22 +142,60 @@ class Auth extends BaseController
         ];
         session()->remove($userData);
 
-        return view('welcome');
+        return view('on_boarding');
     }
+
+
 
     public function submitData()
     {
-        $data = $this->input->post();
-        if (!empty($data)) {
-            $this->db->insert('users', $data);
+        $session = session();
+        $id = $session->get('id');
+        $name = $session->get('name');
+        $email = $session->get('email');
+        echo $name;
+        echo $email;
+        $model = new UserModel();
+        $userData = $model->getUserById($id);
+        $xp = $this->request->getGet('xp');
+        echo $xp;
+        // $dataUser = $this->model->getUserById($id);
+        if ($id == $userData) {
 
-            $this->output->set_content_type('application/json');
-            $this->output->set_output(json_encode(['success' => true]));
-        } else {
-            $this->output->set_content_type('application/json');
-            $this->output->set_output(json_encode(['error' => true]));
+            $data = [
+                'xp' => $xp
+            ];
+            $save = $this->model->insertData($data);
+            // $save = $this->model->save($data);
+            if ($save) {
+                session()->setFlashdata('success', 'Berhasil!');
+            } else {
+                session()->setFlashdata('error', $this->model->errors());
+                return redirect()->back();
+            }
+            echo $data;
+            print_r($data);
+            //     // $data = $this->input->post('xp');
+            //     if (!empty($data)) {
+            //         $this->model->update('users', $data['xp']);
+            //         // $this->db->insert('users', $data);
+            //         return $this->response->setJSON([
+            //             'status' => true,
+            //             'response' => 'Success create data ' . $data['xp']
+            //         ]);
+            //         // $this->output->set_content_type('application/json');
+            //         // $this->output->set_output(json_encode(['success' => true]));
+            //     } else {
+            //         return $this->response->setJSON([
+            //             'status' => false,
+            //             'response' => 'error', $this->model->errors()
+            //         ]);
+            //         // $this->output->set_content_type('application/json');
+            //         // $this->output->set_output(json_encode(['error' => true]));
         }
+        // }
     }
+
 
     //     public function delete($id)
     //     {

@@ -12,13 +12,13 @@
                     <div class="card-body py-1">
                         <a href="" class="btn btn-rounded my-3 mx-2 text-white btn_red fs-5 fw-bold" role="button">
                             1</a>
-                        <a href="/tumbuhan-2" class="btn btn-rounded my-3 mx-2 text-white btn_gray fs-5 fw-bold" role="button">
+                        <a href="/tumbuhan-2" class="btn btn-rounded my-3 mx-2 text-white btn_gray fs-5 fw-bold disabled" role="button">
                             2</a>
-                        <a href="/tumbuhan-3" class="btn btn-rounded my-3 mx-2 text-white btn_gray fs-5 fw-bold" role="button">
+                        <a href="/tumbuhan-3" class="btn btn-rounded my-3 mx-2 text-white btn_gray fs-5 fw-bold disabled" role="button">
                             3</a>
-                        <a href="/tumbuhan-4" class="btn btn-rounded my-3 mx-2 text-white btn_gray fs-5 fw-bold" role="button">
+                        <a href="/tumbuhan-4" class="btn btn-rounded my-3 mx-2 text-white btn_gray fs-5 fw-bold disabled" role="button">
                             4</a>
-                        <a href="/tumbuhan-5" class="btn btn-rounded my-3 mx-2 text-white btn_gray fs-5 fw-bold" role="button">
+                        <a href="/tumbuhan-5" class="btn btn-rounded my-3 mx-2 text-white btn_gray fs-5 fw-bold disabled" role="button">
                             5</a>
                     </div>
                 </div>

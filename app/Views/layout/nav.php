@@ -23,7 +23,7 @@
                 <img src="assets/icon/i_exp.png" style="height: 2em;" alt="">
             </span>
             <div class="pt-3 me-5">
-                <p class="fs-4" id="nilaiXP"></p>
+                <p class="fs-4" id="nilaiEXP"></p>
                 <script>
                     // if (point = 0) {
                     //     xp = document.getElementById('nilaiXP');

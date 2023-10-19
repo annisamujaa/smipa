@@ -21,19 +21,6 @@
                         <a href="/benda-5" class="btn btn-rounded my-3 mx-2 text-white btn_gray fs-5 fw-bold" role="button">
                             5</a>
                     </div>
-                    <div class="card-footer">
-                        <h5 class="yellow_color fw-bold text-center">Informasi</h5>
-                        <div class="mt-2">
-                            <small><b class="yellow_color">Benda Padat: </b> <span>memiliki bentuk yang tetap dan tidak mudah berubah bentuk</span></small>
-                        </div>
-                        <div class="mt-2">
-                            <small><b class="yellow_color">Benda Cair: </b><span>memiliki bentuk yang berubah sesuai wadahnya</span></small>
-                        </div>
-                        <div class="mt-2">
-                            <small><b class="yellow_color">Benda Gas: </b><span>memiliki bentuk yang tetap dan mengisi seluruh wadahnya</span></small>
-                        </div>
-
-                    </div>
                 </div>
             </div>
             <div class="col">

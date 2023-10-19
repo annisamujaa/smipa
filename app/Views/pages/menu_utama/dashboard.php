@@ -7,15 +7,15 @@
 <body class="bg mrgn">
     <div class="container mt-5">
         <div class="row">
-            <div class="col-4 mx-3">
+            <div class="col-4">
                 <div class="card">
                     <div class="card-body">
                         <a href="/dashboard" class="btn btn_template2 btn_menu my-2 text-white btn_red rounded-pill text-capitalize fs-5" role="button">
                             <img src="assets/icon/i_latihan.png" alt="">
-                            Latihan</a>
-                        <a href="/tantangan" class="btn btn_template2 btn_menu my-2 text-white btn_yellow rounded-pill text-capitalize fs-5" role="button">
+                            Belajar</a>
+                        <a href="/peringkat" class="btn btn_template2 btn_menu my-2 text-white btn_yellow rounded-pill text-capitalize fs-5" role="button">
                             <img src="assets/icon/i_tantangan.png" alt="">
-                            Tantangan</a>
+                            Peringkat</a>
                         <a href="/petunjuk" class="btn btn_template2 btn_menu my-2 text-white btn_cream rounded-pill text-capitalize fs-5" role="button">
                             <img src="assets/icon/i_petunjuk.png" alt="">
                             Petunjuk</a>
@@ -25,10 +25,10 @@
                     </div>
                 </div>
             </div>
-            <div class="col-7">
+            <div class="col">
                 <div class="card mb-3">
-                    <div class="card-header pt-2 pb-1">
-                        <h5 class="text-center fw-bold">Latihan</h5>
+                    <div class="card-header">
+                        <h5 class="fw-bold text-center pt-2">Belajar</h5>
                     </div>
                     <div class="card-body">
                         <a href="/hewan-1" class="btn btn_template2 mb-2 text-white btn_dashboard btn_blue rounded-pill text-capitalize fs-5" role="button">
